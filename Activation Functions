@@ -1,1 +1,73 @@
+1. Sigmoid Function (Logistic Function)
+Formula: 𝜎(𝑥) = 1/(1+𝑒^−x)
+ Output Range: (0, 1)
 
+Characteristics:
+  Smooth and differentiable.
+  Squashes the input into a range between 0 and 1.
+  Often used for binary classification (e.g., in the output layer for predicting probabilities).
+
+Limitations:
+  Vanishing Gradient Problem: In deep networks, the gradients tend to become very small during backpropagation, slowing down learning.
+
+
+2. Hyperbolic Tangent (tanh)
+Formula: tanh(x)= [2 / (1+e^−2x )] −1
+  Output Range: (-1, 1)
+
+Characteristics:
+  Similar to sigmoid but outputs values between -1 and 1, making it zero-centered.
+  Provides stronger gradients than the sigmoid function, making it preferable in some cases.
+Limitations:
+  Also suffers from the vanishing gradient problem at extreme values of the input.
+
+
+3. Rectified Linear Unit (ReLU)
+Formula: f(x)=max(0,x)
+  Output Range: [0, ∞)
+
+Characteristics:
+  Most commonly used activation function in deep learning due to its simplicity and efficiency.
+  Outputs 0 for negative values and the input itself for positive values, making it computationally efficient.
+  Helps solve the vanishing gradient problem seen in sigmoid and tanh functions.
+Limitations:
+  Dying ReLU Problem: Neurons can sometimes "die" during training if they always output 0, effectively making them inactive.
+
+
+4. Leaky ReLU
+Formula:
+f(x) = {  x  if x>0
+          αx if x≤0  
+​
+  where α is a small positive constant (e.g., 0.01).
+  Output Range: (-∞, ∞)
+
+Characteristics:
+  Similar to ReLU, but with a small negative slope for negative inputs (to avoid the dying ReLU problem).
+  Helps maintain a small gradient even for negative inputs.
+
+
+5. Softmax Function
+Formula: softmax(xi)= e^x_i/∑_j e^x_j 
+
+  Output Range: (0, 1) (for each class, with all outputs summing to 1)
+
+Characteristics:
+  Typically used in the output layer of a neural network for multi-class classification.
+  Converts raw scores (logits) into probabilities for each class.
+Limitations:
+  Can lead to vanishing gradients when probabilities become very close to 0 or 1.
+
+
+6. Exponential Linear Unit (ELU)
+Formula:
+
+f(x) = { x            if x>0
+         α(e^x − 1)   if x≤0
+​
+  where α is a constant (typically set to 1).
+  Output Range: (-∞, ∞)
+
+Characteristics:
+  Similar to ReLU, but smoother for negative inputs.
+  Helps reduce the bias shift during training by allowing negative values.
