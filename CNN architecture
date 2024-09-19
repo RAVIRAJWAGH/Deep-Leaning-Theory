@@ -1,0 +1,56 @@
+Flow of CNN Architecture
+
+Input Layer:
+
+    Receives the input data, often in the form of images (e.g., 2D arrays of pixel values).
+    Convolutional Layer:
+    
+    Applies filters (kernels) that slide over the input to detect features such as edges, textures, and shapes.
+    Produces feature maps that highlight the presence of specific features in the input data.
+    Followed by an activation function (e.g., ReLU) to introduce non-linearity.
+    Activation Function (e.g., ReLU):
+    
+    Applies a non-linear function to the feature maps to allow the network to learn complex patterns.
+
+Pooling Layer:
+
+    Reduces the spatial dimensions of the feature maps through operations like Max Pooling or Average Pooling.
+    Helps to retain the most significant features and reduces computational load.
+    
+
+Additional Convolutional and Pooling Layers (Optional):
+    
+    Multiple convolutional and pooling layers can be stacked to learn more abstract and complex features.
+    Each successive layer learns higher-level features, building upon those learned in previous layers.
+    
+
+Flattening Layer:
+    
+    Flattens the 2D feature maps into a 1D vector, preparing the data for the fully connected layers.
+    
+
+Fully Connected Layer (Dense Layer):
+    
+    Connects every neuron from the previous layer to every neuron in the current layer.
+    Combines the extracted features to make decisions and perform classification or regression.
+
+
+Output Layer:
+
+    Produces the final predictions.
+    For classification tasks, typically uses an activation function like Softmax (for multi-class) or Sigmoid (for binary classification).
+    Loss Function and Optimization:
+    
+    Computes the loss based on the difference between predicted and actual values.
+    The optimizer (e.g., SGD, Adam) updates the weights of the network to minimize the loss during training.
+   
+
+Backpropagation:
+    
+    Adjusts weights and biases through gradient descent to minimize the loss, optimizing the network's performance.
+
+Key Points:
+        Convolutional Layers: Feature extraction.
+        Pooling Layers: Dimensionality reduction.
+        Fully Connected Layers: Decision making.
+        Output Layer: Final predictions.
